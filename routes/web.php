@@ -23,7 +23,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth'])->group(function () {
+// Admin Routes
+Route::middleware(['role:admin'])->group(function () {
     Route::resource('filters', FilterController::class);
 });
-

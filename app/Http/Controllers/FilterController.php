@@ -24,7 +24,6 @@ class FilterController extends Controller
 
     public function store(Request $request)
     {
-        // Validate and store the new filter
         $filter = new Filter($request->all());
         $filter->save();
 
@@ -38,7 +37,6 @@ class FilterController extends Controller
 
     public function update(Request $request, Filter $filter)
     {
-        // Validate and update the filter
         $filter->update($request->all());
 
         return redirect()->route('filters.index')->with('success', 'Filter updated successfully!');
@@ -46,7 +44,6 @@ class FilterController extends Controller
 
     public function destroy(Filter $filter)
     {
-        // Delete the filter
         $filter->delete();
 
         return redirect()->route('filters.index')->with('success', 'Filter deleted successfully!');

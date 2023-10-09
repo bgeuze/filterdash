@@ -13,4 +13,8 @@ class Filter extends Model
         'creator_social_media',
         'filter_unlock_link',
     ];
+
+    public static function factory()
+    {
+    }
 }
